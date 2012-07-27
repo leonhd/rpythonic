@@ -229,6 +229,8 @@ GTK_WIDGET_CLASSES = {
 
 	GtkCalendar : gtk_calendar_new,
 	GtkArrow : gtk_arrow_new,
+	GtkMenu : gtk_menu_new,
+	GtkMenuItem: gtk_menu_item_new_with_label,
 }
 
 GTK_CONTAINER_CLASSES = {

@@ -212,4 +212,14 @@ if '--gvfs' in sys.argv:	# not working
 		library_names = ['/usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon.so', '/usr/lib/x86_64-linux-gnu/gvfs/libgvfscommon-dnssd.so'],
 	)
 
+if '--appindicator' in sys.argv:	# apt-get install libappindicator-dev
+	rpythonic.wrap( 'libappindicator', 
+		header='/usr/include/libappindicator-0.1/libappindicator/app-indicator.h',
+		includes=[
+			'/usr/include/gtk-3.0/',
+			] + GINCLUDE,
+		library_names = ['libappindicator'],
+		ctypes_footer= glibfooter + gtkfooter,
+		strip_prefixes = ['app_', 'GTK_', 'gtk_'],
+	)
 
